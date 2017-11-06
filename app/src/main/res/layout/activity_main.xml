@@ -40,7 +40,10 @@
             android:layout_width="0dp"
             android:layout_weight=".25"
             android:layout_height="wrap_content"
-            android:text="New"
+            android:drawableTop="@drawable/ic_new"
+            android:text="Add"
+            android:textAllCaps="false"
+            android:paddingTop="5dp"
             android:background="@color/colorAccent"
             android:textColor="@color/colorTextIcons"
             android:layout_alignParentBottom="true"
@@ -54,7 +57,10 @@
             android:layout_weight=".25"
             android:layout_height="wrap_content"
             android:layout_alignParentBottom="true"
-            android:text="My Logs"
+            android:drawableTop="@drawable/ic_list"
+            android:text="My Log"
+            android:textAllCaps="false"
+            android:paddingTop="5dp"
             android:background="@color/colorAccent"
             android:textColor="@color/colorTextIcons"/>
 
@@ -64,7 +70,10 @@
             android:layout_weight=".25"
             android:layout_height="wrap_content"
             android:layout_alignParentBottom="true"
+            android:drawableTop="@drawable/ic_team"
             android:text="Team"
+            android:textAllCaps="false"
+            android:paddingTop="5dp"
             android:background="@color/colorAccent"
             android:textColor="@color/colorTextIcons"/>
 
@@ -77,12 +86,12 @@
             android:layout_alignParentRight="true"
             android:layout_alignParentBottom="true"
             android:layout_alignTop="@+id/button"
-            android:text="About"
+            android:drawableTop="@drawable/ic_info"
+            android:text="Info"
+            android:textAllCaps="false"
+            android:paddingTop="5dp"
             android:background="@color/colorAccent"
             android:textColor="@color/colorTextIcons"/>
-
-
-
     </LinearLayout>
 
 
