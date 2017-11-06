@@ -9,29 +9,26 @@ import android.widget.Button;
 import butterknife.Bind;
 import butterknife.ButterKnife;
 
-public class MainActivity extends AppCompatActivity implements View.OnClickListener{
+public class InfoActivity extends AppCompatActivity implements View.OnClickListener{
 
-    @Bind(R.id.addButton) Button mAddButton;
-    @Bind(R.id.myLogButton) Button mMyLogButton;
     @Bind(R.id.teamButton) Button mTeamButton;
-    @Bind(R.id.infoButton) Button mInfoButton;
+    @Bind(R.id.dashButton) Button mDashButton;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_main);
+        setContentView(R.layout.activity_info);
         ButterKnife.bind(this);
 
-        mAddButton.setOnClickListener(this);
-        mMyLogButton.setOnClickListener(this);
+
         mTeamButton.setOnClickListener(this);
-        mInfoButton.setOnClickListener(this);
+        mDashButton.setOnClickListener(this);
     }
 
     @Override
     public void onClick(View v) {
-        if (v == mInfoButton) {
-            Intent intent = new Intent(MainActivity.this, InfoActivity.class);
+        if (v == mDashButton) {
+            Intent intent = new Intent(InfoActivity.this, MainActivity.class);
             startActivity(intent);
         }
     }
