@@ -1,0 +1,55 @@
+{
+  "project_info": {
+    "project_number": "502324187204",
+    "firebase_url": "https://wellnesschallengeapp.firebaseio.com",
+    "project_id": "wellnesschallengeapp",
+    "storage_bucket": "wellnesschallengeapp.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:502324187204:android:a4994f77dea4d9ec",
+        "android_client_info": {
+          "package_name": "com.epicodus.wellnesschallenge"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "502324187204-uru71ojdnhthdtfimncd7hshm4ug3nk9.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.epicodus.wellnesschallenge",
+            "certificate_hash": "f49294a9268123a7cf4fd94fe119fbfa4a441818"
+          }
+        },
+        {
+          "client_id": "502324187204-q8pme2r6pet9vsbuldfq3apqvv355era.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAiCh71fjTIU5Xcm3pgBEUZdKaWjNpoYsc"
+        }
+      ],
+      "services": {
+        "analytics_service": {
+          "status": 1
+        },
+        "appinvite_service": {
+          "status": 2,
+          "other_platform_oauth_client": [
+            {
+              "client_id": "502324187204-q8pme2r6pet9vsbuldfq3apqvv355era.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        },
+        "ads_service": {
+          "status": 2
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
