@@ -1,4 +1,4 @@
-package com.epicodus.wellnesschallenge;
+package com.epicodus.wellnesschallenge.ui;
 
 import android.content.Intent;
 import android.graphics.Typeface;
@@ -7,6 +7,9 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 import android.widget.TextView;
+
+import com.epicodus.wellnesschallenge.MainActivity;
+import com.epicodus.wellnesschallenge.R;
 
 import butterknife.Bind;
 import butterknife.ButterKnife;
