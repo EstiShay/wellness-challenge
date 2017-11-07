@@ -12,13 +12,22 @@
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Get Active Wellness Challenge"
+        android:text="Get Active"
         android:textColor="@color/colorTextIcons"
-        android:textSize="50sp"
+        android:textSize="70sp"
         android:layout_alignParentTop="true"
         android:layout_centerHorizontal="true"
         android:layout_marginTop="35dp"
         android:id="@+id/appNameTextView" />
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Wellness Challenge"
+        android:textColor="@color/colorTextIcons"
+        android:textSize="40sp"
+        android:layout_centerHorizontal="true"
+        android:id="@+id/subtitleTextView"
+        android:layout_below="@+id/appNameTextView"/>
 
     <LinearLayout
         android:layout_width="match_parent"

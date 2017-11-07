@@ -14,7 +14,7 @@
         android:id="@+id/appNameTextView"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Get Active Wellness Challenge"
+        android:text="Get Active"
         android:textColor="@color/colorTextIcons"
         android:textSize="50sp"
         android:layout_alignParentTop="true"
