@@ -9,6 +9,7 @@ import android.widget.Button;
 import android.widget.TextView;
 
 import com.epicodus.wellnesschallenge.ui.InfoActivity;
+import com.epicodus.wellnesschallenge.ui.UserLogActivity;
 
 import butterknife.Bind;
 import butterknife.ButterKnife;
@@ -44,7 +45,8 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
             Intent intent = new Intent(MainActivity.this, InfoActivity.class);
             startActivity(intent);
         } else if (v == mMyLogButton) {
-
+            Intent intent = new Intent(MainActivity.this, UserLogActivity.class);
+            startActivity(intent);
         } else if (v == mTeamButton) {
 
         } else if (v == mAddButton) {

@@ -94,9 +94,4 @@
             android:background="@color/colorAccent"
             android:textColor="@color/colorTextIcons"/>
     </LinearLayout>
-
-
-
-
-
 </RelativeLayout>
