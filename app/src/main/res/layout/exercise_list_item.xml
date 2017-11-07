@@ -22,18 +22,19 @@
             android:id="@+id/dateTitleTextView"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:layout_marginRight="5dp"
             android:text="Date:"
             android:textColor="@color/colorPrimaryDark"
-            android:textSize="20sp"
-            android:layout_marginRight="5dp"/>
+            android:textSize="20sp" />
+
         <TextView
             android:id="@+id/dateTextView"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:layout_marginRight="60dp"
             android:text="Date"
             android:textColor="@color/colorPrimaryDark"
-            android:textSize="20sp"
-            android:layout_marginRight="60dp"/>
+            android:textSize="20sp" />
 
         <TextView
             android:id="@+id/milesTitleTextView"
@@ -41,19 +42,21 @@
             android:layout_height="wrap_content"
             android:layout_alignParentRight="true"
             android:layout_alignParentTop="true"
+            android:layout_marginRight="5dp"
             android:text="Miles: "
-            android:textSize="20sp"
-            android:layout_marginRight="5dp"/>
+            android:textSize="20sp" />
             android:textColor="@color/colorPrimaryDark" />
+
         <TextView
             android:id="@+id/milesTextView"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_alignParentRight="true"
             android:layout_alignParentTop="true"
+            android:layout_gravity="right"
             android:text="Miles"
-            android:textSize="20sp"
-            android:textColor="@color/colorPrimaryDark" />
+            android:textColor="@color/colorPrimaryDark"
+            android:textSize="20sp" />
 
     </LinearLayout>
 </LinearLayout>
