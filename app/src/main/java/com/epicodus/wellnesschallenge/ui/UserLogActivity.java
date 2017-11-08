@@ -39,6 +39,7 @@ public class UserLogActivity extends AppCompatActivity implements View.OnClickLi
 
         mDashButton.setOnClickListener(this);
         mInfoButton.setOnClickListener(this);
+        mAddButton.setOnClickListener(this);
 
         mExercisesReference = FirebaseDatabase.getInstance().getReference(Constants.FIREBASE_CHILD_EXERCISES);
         setUpFirebaseAdapter();
@@ -70,6 +71,9 @@ public class UserLogActivity extends AppCompatActivity implements View.OnClickLi
         } else if (v == mDashButton) {
             Intent intent = new Intent(UserLogActivity.this, MainActivity.class);
             startActivity(intent);
+        } else if (v == mAddButton){
+            AddExerciseFragment addExerciseFragment = new AddExerciseFragment();
+            addExerciseFragment.show(getSupportFragmentManager(), "Exercise Form Dialog");
         }
     }
 }

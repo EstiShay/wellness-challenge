@@ -19,7 +19,8 @@
             </intent-filter>
         </activity>
         <activity android:name=".ui.InfoActivity" />
-        <activity android:name=".ui.UserLogActivity"></activity>
+        <activity android:name=".ui.UserLogActivity" />
+        <activity android:name=".ui.AddExerciseActivity"></activity>
     </application>
 
 </manifest>
