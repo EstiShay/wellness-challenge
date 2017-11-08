@@ -4,13 +4,13 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context="com.epicodus.wellnesschallenge.ui.CreateAccountActivity"
+    tools:context="com.epicodus.wellnesschallenge.ui.LoginActivity"
     android:background="@color/colorPrimary">
 
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Create Account"
+        android:text="Login"
         android:textColor="@color/colorPrimaryLight"
         android:textSize="30dp"
         android:textStyle="bold"
@@ -18,26 +18,13 @@
         android:layout_centerHorizontal="true" />
 
     <LinearLayout
+        android:orientation="vertical"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:orientation="vertical"
         android:padding="30dp"
         android:layout_centerVertical="true"
         android:layout_centerHorizontal="true"
         android:id="@+id/linearLayout">
-
-        <EditText
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:id="@+id/nameEditText"
-            android:hint="Name"
-            android:nextFocusDown="@+id/passwordEditText"
-            android:padding="10dp"
-            android:layout_marginBottom="10dp"
-            android:background="@color/colorPrimaryLight"
-            android:textColor="@color/colorAccent"
-            android:textColorHint="@color/colorTextIcons"
-            android:textSize="20sp"/>
 
         <EditText
             android:id="@+id/emailEditText"
@@ -61,21 +48,6 @@
             android:inputType="textPassword"
             android:nextFocusDown="@+id/passwordEditText"
             android:padding="10dp"
-            android:layout_marginBottom="10dp"
-            android:background="@color/colorPrimaryLight"
-            android:textColor="@color/colorAccent"
-            android:textColorHint="@color/colorTextIcons"
-            android:textSize="20sp" />
-
-        <EditText
-            android:id="@+id/confirmPasswordEditText"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:hint="Confirm Password"
-            android:inputType="textPassword"
-            android:nextFocusDown="@+id/passwordEditText"
-            android:padding="10dp"
-            android:layout_marginBottom="10dp"
             android:background="@color/colorPrimaryLight"
             android:textColor="@color/colorAccent"
             android:textColorHint="@color/colorTextIcons"
@@ -83,11 +55,11 @@
 
 
         <Button
-            android:id="@+id/createUserButton"
+            android:id="@+id/passwordLoginButton"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:padding="10dp"
-            android:text="Sign up"
+            android:text="Log in"
             android:background="@color/colorAccent"
             android:layout_marginTop="15dp"
             android:textColor="@color/colorTextIcons" />
@@ -99,10 +71,9 @@
             android:textColor="@color/colorTextIcons"
             android:textStyle="bold"
             android:textSize="15sp"
-            android:text="Already have an account?"
-            android:id="@+id/loginTitleTextView"
+            android:text="Don't have an account?"
+            android:id="@+id/registerTitleTextView"
             android:layout_gravity="center_horizontal" />
-
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
@@ -110,10 +81,9 @@
             android:textColor="@color/colorTextIcons"
             android:textStyle="bold"
             android:textSize="15sp"
-            android:text="LOG IN"
-            android:id="@+id/loginTextView"
+            android:text="SIGN UP"
+            android:id="@+id/registerTextView"
             android:layout_gravity="center_horizontal" />
 
     </LinearLayout>
-
 </RelativeLayout>
