@@ -1,5 +1,6 @@
 package com.epicodus.wellnesschallenge;
 
+import android.app.FragmentManager;
 import android.content.Intent;
 import android.graphics.Typeface;
 import android.support.v7.app.AppCompatActivity;
@@ -8,6 +9,7 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.TextView;
 
+import com.epicodus.wellnesschallenge.ui.AddExerciseFragment;
 import com.epicodus.wellnesschallenge.ui.InfoActivity;
 import com.epicodus.wellnesschallenge.ui.UserLogActivity;
 
@@ -47,9 +49,10 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         } else if (v == mMyLogButton) {
             Intent intent = new Intent(MainActivity.this, UserLogActivity.class);
             startActivity(intent);
-        } else if (v == mTeamButton) {
-
         } else if (v == mAddButton) {
+            AddExerciseFragment addExerciseFragment = new AddExerciseFragment();
+            addExerciseFragment.show(getSupportFragmentManager(), "Exercise Form Dialog");
+        } else if (v == mTeamButton) {
 
         }
     }
