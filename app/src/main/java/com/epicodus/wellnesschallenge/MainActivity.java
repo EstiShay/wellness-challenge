@@ -12,6 +12,7 @@ import android.view.MenuItem;
 import android.view.View;
 import android.widget.Button;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import com.epicodus.wellnesschallenge.ui.AddExerciseFragment;
 import com.epicodus.wellnesschallenge.ui.InfoActivity;
@@ -75,7 +76,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
             AddExerciseFragment addExerciseFragment = new AddExerciseFragment();
             addExerciseFragment.show(getSupportFragmentManager(), "Exercise Form Dialog");
         } else if (v == mTeamButton) {
-
+            Toast.makeText(MainActivity.this, "Coming soon!", Toast.LENGTH_SHORT).show();
         }
     }
     @Override

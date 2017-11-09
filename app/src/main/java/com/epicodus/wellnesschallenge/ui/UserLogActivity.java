@@ -7,6 +7,7 @@ import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
 import android.view.View;
 import android.widget.Button;
+import android.widget.Toast;
 
 import com.epicodus.wellnesschallenge.Constants;
 import com.epicodus.wellnesschallenge.MainActivity;
@@ -45,6 +46,7 @@ public class UserLogActivity extends AppCompatActivity implements View.OnClickLi
         mDashButton.setOnClickListener(this);
         mInfoButton.setOnClickListener(this);
         mAddButton.setOnClickListener(this);
+        mTeamButton.setOnClickListener(this);
 
         mExercisesReference = FirebaseDatabase.getInstance().getReference(Constants.FIREBASE_CHILD_EXERCISES).child(uid);
         setUpFirebaseAdapter();
@@ -76,6 +78,8 @@ public class UserLogActivity extends AppCompatActivity implements View.OnClickLi
         } else if (v == mDashButton) {
             Intent intent = new Intent(UserLogActivity.this, MainActivity.class);
             startActivity(intent);
+        } else if (v == mTeamButton){
+                Toast.makeText(UserLogActivity.this, "Coming soon!", Toast.LENGTH_SHORT).show();
         } else if (v == mAddButton){
             AddExerciseFragment addExerciseFragment = new AddExerciseFragment();
             addExerciseFragment.show(getSupportFragmentManager(), "Exercise Form Dialog");
