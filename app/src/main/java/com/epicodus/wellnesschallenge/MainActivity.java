@@ -3,6 +3,7 @@ package com.epicodus.wellnesschallenge;
 import android.app.FragmentManager;
 import android.content.Intent;
 import android.graphics.Typeface;
+import android.support.annotation.NonNull;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.Menu;
@@ -17,6 +18,7 @@ import com.epicodus.wellnesschallenge.ui.InfoActivity;
 import com.epicodus.wellnesschallenge.ui.LoginActivity;
 import com.epicodus.wellnesschallenge.ui.UserLogActivity;
 import com.google.firebase.auth.FirebaseAuth;
+import com.google.firebase.auth.FirebaseUser;
 
 import butterknife.Bind;
 import butterknife.ButterKnife;
@@ -29,11 +31,27 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
     @Bind(R.id.teamButton) Button mTeamButton;
     @Bind(R.id.infoButton) Button mInfoButton;
 
+    private FirebaseAuth mAuth;
+    private FirebaseAuth.AuthStateListener mAuthListener;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
         ButterKnife.bind(this);
+
+        mAuth = FirebaseAuth.getInstance();
+        mAuthListener = new FirebaseAuth.AuthStateListener() {
+            @Override
+            public void onAuthStateChanged(@NonNull FirebaseAuth firebaseAuth) {
+                FirebaseUser user = firebaseAuth.getCurrentUser();
+                if (user != null) {
+                    getSupportActionBar().setTitle("Welcome, " + user.getDisplayName() + "!");
+                } else {
+
+                }
+            }
+        };
 
         Typeface ranchoFont = Typeface.createFromAsset(getAssets(), "fonts/rancho.ttf");
         mAppNameTextView.setTypeface(ranchoFont);
@@ -75,6 +93,19 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
             return true;
         }
         return super.onOptionsItemSelected(item);
+    }
+    @Override
+    public void onStart() {
+        super.onStart();
+        mAuth.addAuthStateListener(mAuthListener);
+    }
+
+    @Override
+    public void onStop() {
+        super.onStop();
+        if (mAuthListener != null) {
+            mAuth.removeAuthStateListener(mAuthListener);
+        }
     }
     private void logout() {
         FirebaseAuth.getInstance().signOut();

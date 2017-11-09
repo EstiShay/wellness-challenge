@@ -5,7 +5,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context="com.epicodus.wellnesschallenge.ui.CreateAccountActivity"
-    android:background="@color/colorPrimary">
+    android:background="@color/colorPrimaryDark">
 
     <TextView
         android:layout_width="wrap_content"
@@ -31,13 +31,13 @@
             android:layout_height="wrap_content"
             android:id="@+id/nameEditText"
             android:hint="Name"
-            android:nextFocusDown="@+id/passwordEditText"
+            android:nextFocusDown="@+id/emailEditText"
             android:padding="10dp"
             android:layout_marginBottom="10dp"
-            android:background="@color/colorPrimaryLight"
+            android:background="@color/colorTextIcons"
             android:textColor="@color/colorAccent"
-            android:textColorHint="@color/colorTextIcons"
-            android:textSize="20sp"/>
+            android:textColorHint="@color/colorDivider"
+            android:textSize="17sp"/>
 
         <EditText
             android:id="@+id/emailEditText"
@@ -48,10 +48,10 @@
             android:nextFocusDown="@+id/passwordEditText"
             android:padding="10dp"
             android:layout_marginBottom="10dp"
-            android:background="@color/colorPrimaryLight"
+            android:background="@color/colorTextIcons"
             android:textColor="@color/colorAccent"
-            android:textColorHint="@color/colorTextIcons"
-            android:textSize="20sp" />
+            android:textColorHint="@color/colorDivider"
+            android:textSize="17sp" />
 
         <EditText
             android:id="@+id/passwordEditText"
@@ -59,13 +59,13 @@
             android:layout_height="wrap_content"
             android:hint="Password"
             android:inputType="textPassword"
-            android:nextFocusDown="@+id/passwordEditText"
+            android:nextFocusDown="@+id/confirmPasswordEditText"
             android:padding="10dp"
             android:layout_marginBottom="10dp"
-            android:background="@color/colorPrimaryLight"
+            android:background="@color/colorTextIcons"
             android:textColor="@color/colorAccent"
-            android:textColorHint="@color/colorTextIcons"
-            android:textSize="20sp" />
+            android:textColorHint="@color/colorDivider"
+            android:textSize="17sp" />
 
         <EditText
             android:id="@+id/confirmPasswordEditText"
@@ -73,14 +73,39 @@
             android:layout_height="wrap_content"
             android:hint="Confirm Password"
             android:inputType="textPassword"
-            android:nextFocusDown="@+id/passwordEditText"
+            android:nextFocusDown="@+id/teamEditText"
             android:padding="10dp"
             android:layout_marginBottom="10dp"
-            android:background="@color/colorPrimaryLight"
+            android:background="@color/colorTextIcons"
             android:textColor="@color/colorAccent"
-            android:textColorHint="@color/colorTextIcons"
-            android:textSize="20sp" />
+            android:textColorHint="@color/colorDivider"
+            android:textSize="17sp" />
 
+        <EditText
+            android:id="@+id/teamEditText"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="Team Name"
+            android:nextFocusDown="@+id/photoUrlEditText"
+            android:padding="10dp"
+            android:layout_marginBottom="10dp"
+            android:background="@color/colorTextIcons"
+            android:textColor="@color/colorAccent"
+            android:textColorHint="@color/colorDivider"
+            android:textSize="17sp" />
+
+        <EditText
+            android:id="@+id/photoUrlEditText"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="Photo url"
+            android:nextFocusDown="@+id/createUserButton"
+            android:padding="10dp"
+            android:layout_marginBottom="10dp"
+            android:background="@color/colorTextIcons"
+            android:textColor="@color/colorAccent"
+            android:textColorHint="@color/colorDivider"
+            android:textSize="17sp" />
 
         <Button
             android:id="@+id/createUserButton"
@@ -115,5 +140,4 @@
             android:layout_gravity="center_horizontal" />
 
     </LinearLayout>
-
 </RelativeLayout>
