@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    android:layout_width="match_parent" android:layout_height="match_parent">
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
 
     <ImageView
         android:layout_width="wrap_content"
@@ -10,24 +11,29 @@
         android:scaleType="centerCrop" />
 
     <TextView
+        android:id="@+id/appNameTextView"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="Get Active"
         android:textColor="@color/colorTextIcons"
-        android:textSize="70sp"
+        android:textSize="50sp"
         android:layout_alignParentTop="true"
         android:layout_centerHorizontal="true"
-        android:layout_marginTop="35dp"
-        android:id="@+id/appNameTextView" />
+        android:layout_marginTop="20dp"/>
+
     <TextView
+        android:id="@+id/aboutTextView"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Wellness Challenge"
+        android:layout_marginTop="43dp"
+        android:text="@string/about_this_app"
         android:textColor="@color/colorTextIcons"
-        android:textSize="40sp"
+        android:layout_below="@+id/appNameTextView"
         android:layout_centerHorizontal="true"
-        android:id="@+id/subtitleTextView"
-        android:layout_below="@+id/appNameTextView"/>
+        android:layout_margin="15dp"
+        android:textSize="15sp"
+        android:background="@drawable/rounded_corner"
+        android:padding="10dp"/>
 
     <LinearLayout
         android:layout_width="match_parent"
@@ -37,12 +43,12 @@
         android:layout_centerHorizontal="true">
 
         <Button
-            android:id="@+id/addButton"
+            android:id="@+id/dashButton"
             android:layout_width="0dp"
-            android:layout_weight=".25"
+            android:layout_weight=".5"
             android:layout_height="wrap_content"
-            android:drawableTop="@drawable/ic_new"
-            android:text="Add"
+            android:drawableTop="@drawable/ic_home"
+            android:text="Dashboard"
             android:textAllCaps="false"
             android:paddingTop="5dp"
             android:background="@color/colorAccent"
@@ -53,45 +59,22 @@
             />
 
         <Button
-            android:id="@+id/myLogButton"
-            android:layout_width="0dp"
-            android:layout_weight=".25"
-            android:layout_height="wrap_content"
-            android:layout_alignParentBottom="true"
-            android:drawableTop="@drawable/ic_list"
-            android:text="My Log"
-            android:textAllCaps="false"
-            android:paddingTop="5dp"
-            android:background="@color/colorAccent"
-            android:textColor="@color/colorTextIcons"/>
-
-        <Button
             android:id="@+id/teamButton"
             android:layout_width="0dp"
-            android:layout_weight=".25"
+            android:layout_weight=".5"
             android:layout_height="wrap_content"
+            android:layout_alignParentEnd="true"
+            android:layout_alignParentRight="true"
             android:layout_alignParentBottom="true"
+            android:layout_alignTop="@+id/button"
             android:drawableTop="@drawable/ic_team"
             android:text="Team"
             android:textAllCaps="false"
             android:paddingTop="5dp"
             android:background="@color/colorAccent"
             android:textColor="@color/colorTextIcons"/>
-
-        <Button
-            android:id="@+id/infoButton"
-            android:layout_width="0dp"
-            android:layout_weight=".25"
-            android:layout_height="wrap_content"
-            android:layout_alignParentEnd="true"
-            android:layout_alignParentRight="true"
-            android:layout_alignParentBottom="true"
-            android:layout_alignTop="@+id/button"
-            android:drawableTop="@drawable/ic_info"
-            android:text="Info"
-            android:textAllCaps="false"
-            android:paddingTop="5dp"
-            android:background="@color/colorAccent"
-            android:textColor="@color/colorTextIcons"/>
     </LinearLayout>
+
+
+
 </RelativeLayout>

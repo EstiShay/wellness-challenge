@@ -1,3 +1,9 @@
 <resources>
     <string name="app_name">WellnessChallenge</string>
+    <string name="about_this_app">Challenge your friends and coworkers to live healthier lives! For
+        one month, convert as many of your usual car trips to bike, run, or walk and log your miles
+        to win prizes! Work out with your friends, and see who logs the most activities and miles each week.</string>
+
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
 </resources>

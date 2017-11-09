@@ -1,0 +1,104 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical" android:layout_width="match_parent"
+    android:layout_height="300dp"
+    android:weightSum="1"
+    android:padding="7dp">
+
+    <TextView
+        android:id="@+id/formTitleTextView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Log your exercise"
+        android:textColor="@color/colorPrimaryDark"
+        android:textSize="30sp"
+        android:textStyle="bold" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/exerciseTypeTextView"
+        android:text="Exercise Type: "
+        android:layout_marginLeft="7dp"
+        android:layout_alignBottom="@+id/exerciseTypeEditText"
+        android:layout_toLeftOf="@+id/exerciseTypeEditText"
+        android:layout_toStartOf="@+id/exerciseTypeEditText"
+        android:layout_alignBaseline="@+id/exerciseTypeEditText"/>
+    <EditText
+        android:layout_width="190dp"
+        android:layout_height="wrap_content"
+        android:id="@+id/exerciseTypeEditText"
+        android:ems="15"
+        android:inputType="text"
+        android:layout_below="@+id/formTitleTextView"
+        android:layout_alignParentRight="true"
+        android:layout_alignParentEnd="true"
+        android:layout_marginRight="22dp"
+        android:layout_marginEnd="22dp"/>
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/dateTextView"
+        android:text="Date: "
+        android:layout_marginLeft="7dp"
+        android:layout_alignBottom="@+id/dateEditText"
+        android:layout_toLeftOf="@+id/dateEditText"
+        android:layout_toStartOf="@+id/dateEditText"
+        android:layout_alignBaseline="@+id/dateEditText"/>
+    <EditText
+        android:layout_width="190dp"
+        android:layout_height="wrap_content"
+        android:id="@+id/dateEditText"
+        android:ems="15"
+        android:inputType="text"
+        android:layout_below="@+id/exerciseTypeTextView"
+        android:layout_alignParentRight="true"
+        android:layout_alignParentEnd="true"
+        android:layout_marginRight="22dp"
+        android:layout_marginEnd="22dp"/>
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/milesTextView"
+        android:text="Miles: "
+        android:layout_marginLeft="7dp"
+        android:layout_alignBottom="@+id/milesEditText"
+        android:layout_toLeftOf="@+id/milesEditText"
+        android:layout_toStartOf="@+id/milesEditText"
+        android:layout_alignBaseline="@+id/milesEditText"/>
+    <EditText
+        android:layout_width="190dp"
+        android:layout_height="wrap_content"
+        android:id="@+id/milesEditText"
+        android:ems="15"
+        android:inputType="text"
+        android:layout_below="@+id/dateTextView"
+        android:layout_alignParentRight="true"
+        android:layout_alignParentEnd="true"
+        android:layout_marginRight="22dp"
+        android:layout_marginEnd="22dp"/>
+
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:drawableTop="@drawable/ic_done_white_24dp"
+        android:text="Save"
+        android:textColor="@color/colorTextIcons"
+        android:background="@color/colorAccent"
+        android:id="@+id/saveButton"
+        android:layout_alignParentBottom="true"
+        android:padding="10dp"/>
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:drawableTop="@drawable/ic_clear_white_24dp"
+        android:text="Cancel"
+        android:textColor="@color/colorTextIcons"
+        android:background="@color/colorAccent"
+        android:id="@+id/cancelButton"
+        android:layout_alignParentBottom="true"
+        android:layout_alignParentRight="true"
+        android:padding="10dp"/>
+</RelativeLayout>
