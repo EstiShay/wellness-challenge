@@ -7,6 +7,7 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import com.epicodus.wellnesschallenge.MainActivity;
 import com.epicodus.wellnesschallenge.R;
@@ -41,7 +42,7 @@ public class InfoActivity extends AppCompatActivity implements View.OnClickListe
             Intent intent = new Intent(InfoActivity.this, MainActivity.class);
             startActivity(intent);
         } else if (v == mTeamButton) {
-
+            Toast.makeText(InfoActivity.this, "Coming soon!", Toast.LENGTH_SHORT).show();
         }
     }
 }

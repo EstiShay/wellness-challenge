@@ -79,7 +79,7 @@ public class UserLogActivity extends AppCompatActivity implements View.OnClickLi
             Intent intent = new Intent(UserLogActivity.this, MainActivity.class);
             startActivity(intent);
         } else if (v == mTeamButton){
-                Toast.makeText(UserLogActivity.this, "Coming soon!", Toast.LENGTH_SHORT).show();
+            Toast.makeText(UserLogActivity.this, "Coming soon!", Toast.LENGTH_SHORT).show();
         } else if (v == mAddButton){
             AddExerciseFragment addExerciseFragment = new AddExerciseFragment();
             addExerciseFragment.show(getSupportFragmentManager(), "Exercise Form Dialog");
