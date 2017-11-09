@@ -1,0 +1,143 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="com.epicodus.wellnesschallenge.ui.CreateAccountActivity"
+    android:background="@color/colorPrimaryDark">
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Create Account"
+        android:textColor="@color/colorPrimaryLight"
+        android:textSize="30dp"
+        android:textStyle="bold"
+        android:layout_above="@+id/linearLayout"
+        android:layout_centerHorizontal="true" />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:padding="30dp"
+        android:layout_centerVertical="true"
+        android:layout_centerHorizontal="true"
+        android:id="@+id/linearLayout">
+
+        <EditText
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:id="@+id/nameEditText"
+            android:hint="Name"
+            android:nextFocusDown="@+id/emailEditText"
+            android:padding="10dp"
+            android:layout_marginBottom="10dp"
+            android:background="@color/colorTextIcons"
+            android:textColor="@color/colorAccent"
+            android:textColorHint="@color/colorDivider"
+            android:textSize="17sp"/>
+
+        <EditText
+            android:id="@+id/emailEditText"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="Email"
+            android:inputType="textEmailAddress"
+            android:nextFocusDown="@+id/passwordEditText"
+            android:padding="10dp"
+            android:layout_marginBottom="10dp"
+            android:background="@color/colorTextIcons"
+            android:textColor="@color/colorAccent"
+            android:textColorHint="@color/colorDivider"
+            android:textSize="17sp" />
+
+        <EditText
+            android:id="@+id/passwordEditText"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="Password"
+            android:inputType="textPassword"
+            android:nextFocusDown="@+id/confirmPasswordEditText"
+            android:padding="10dp"
+            android:layout_marginBottom="10dp"
+            android:background="@color/colorTextIcons"
+            android:textColor="@color/colorAccent"
+            android:textColorHint="@color/colorDivider"
+            android:textSize="17sp" />
+
+        <EditText
+            android:id="@+id/confirmPasswordEditText"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="Confirm Password"
+            android:inputType="textPassword"
+            android:nextFocusDown="@+id/teamEditText"
+            android:padding="10dp"
+            android:layout_marginBottom="10dp"
+            android:background="@color/colorTextIcons"
+            android:textColor="@color/colorAccent"
+            android:textColorHint="@color/colorDivider"
+            android:textSize="17sp" />
+
+        <EditText
+            android:id="@+id/teamEditText"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="Team Name"
+            android:nextFocusDown="@+id/photoUrlEditText"
+            android:padding="10dp"
+            android:layout_marginBottom="10dp"
+            android:background="@color/colorTextIcons"
+            android:textColor="@color/colorAccent"
+            android:textColorHint="@color/colorDivider"
+            android:textSize="17sp" />
+
+        <EditText
+            android:id="@+id/photoUrlEditText"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="Photo url"
+            android:nextFocusDown="@+id/createUserButton"
+            android:padding="10dp"
+            android:layout_marginBottom="10dp"
+            android:background="@color/colorTextIcons"
+            android:textColor="@color/colorAccent"
+            android:textColorHint="@color/colorDivider"
+            android:textSize="17sp" />
+
+        <Button
+            android:id="@+id/createUserButton"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:padding="10dp"
+            android:text="Sign up"
+            android:background="@color/colorAccent"
+            android:layout_marginTop="15dp"
+            android:textColor="@color/colorTextIcons" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="20dp"
+            android:textColor="@color/colorTextIcons"
+            android:textStyle="bold"
+            android:textSize="15sp"
+            android:text="Already have an account?"
+            android:id="@+id/loginTitleTextView"
+            android:layout_gravity="center_horizontal" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="20dp"
+            android:textColor="@color/colorTextIcons"
+            android:textStyle="bold"
+            android:textSize="15sp"
+            android:text="LOG IN"
+            android:id="@+id/loginTextView"
+            android:layout_gravity="center_horizontal" />
+
+    </LinearLayout>
+</RelativeLayout>

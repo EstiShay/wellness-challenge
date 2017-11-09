@@ -39,11 +39,11 @@ public class AddExerciseFragment extends DialogFragment implements View.OnClickL
     }
     @Override
     public void onClick(View v){
-        String exerciseType = mExerciseTypeEditText.getText().toString().trim();
-        String date = mDateEditText.getText().toString().trim();
-        double miles = Double.parseDouble(mMilesEditText.getText().toString());
-        Exercise mExercise = new Exercise(date, exerciseType, miles);
         if (v == mSaveButton){
+            String exerciseType = mExerciseTypeEditText.getText().toString().trim();
+            String date = mDateEditText.getText().toString().trim();
+            double miles = Double.parseDouble(mMilesEditText.getText().toString());
+            Exercise mExercise = new Exercise(date, exerciseType, miles);
             DatabaseReference exerciseRef = FirebaseDatabase
                     .getInstance()
                     .getReference(Constants.FIREBASE_CHILD_EXERCISES);
@@ -53,7 +53,6 @@ public class AddExerciseFragment extends DialogFragment implements View.OnClickL
             dismiss();
         } else if (v == mCancelButton){
             dismiss();
+        }
     }
-    }
-
 }
