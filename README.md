@@ -29,7 +29,12 @@ Designed for a Nexus 6 running Marshmallow.
 * Create feature to checkout road conditions before going out for a ride/run
 
 ## Design
-(final screenshots go here)
+<img src="app/src/main/res/drawable/login_screenshot.jpg" height="500" alt="Login activity">
+<img src="app/src/main/res/drawable/create_acct_screenshot.jpg" height="500" alt="Create Account activity">
+<img src="app/src/main/res/drawable/dashboard_screenshot.jpg" height="500" alt="Dashboard activity">
+<img src="app/src/main/res/drawable/exercise_form_screenshot.jpg" height="500" alt="Add exercise fragment">
+<img src="app/src/main/res/drawable/exercise_log_screenshot.jpg" height="500" alt="User log activity">
+<img src="app/src/main/res/drawable/about_screenshot.jpg" height="500" alt="About activity">
 
 ## Setup/Installation Requirements
 * Clone the repo
