@@ -64,17 +64,14 @@ public class CreateAccountActivity extends AppCompatActivity implements View.OnC
         mAuthProgressDialog.setCancelable(false);
     }
 
-
-        @Override
+    @Override
     public void onClick(View view) {
-
         if (view == mLoginTextView) {
             Intent intent = new Intent(CreateAccountActivity.this, LoginActivity.class);
             intent.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK | Intent.FLAG_ACTIVITY_CLEAR_TASK);
             startActivity(intent);
             finish();
         }
-
         if (view == mCreateUserButton) {
             createNewUser();
         }
@@ -83,7 +80,7 @@ public class CreateAccountActivity extends AppCompatActivity implements View.OnC
     private void createNewUser() {
         final String name = mNameEditText.getText().toString().trim();
         final String email = mEmailEditText.getText().toString().trim();
-        String team = mTeamEditText.getText().toString().trim();
+//        String team = mTeamEditText.getText().toString().trim();
         String password = mPasswordEditText.getText().toString().trim();
         String confirmPassword = mConfirmPasswordEditText.getText().toString().trim();
         mName = mNameEditText.getText().toString().trim();
@@ -110,20 +107,20 @@ public class CreateAccountActivity extends AppCompatActivity implements View.OnC
                     }
                 });
 
-        TeamMember newMember = new TeamMember(name, team);
-        if (team == "Lawyers"){
-            DatabaseReference teamMemberRef = FirebaseDatabase
-                    .getInstance()
-                    .getReference(Constants.FIREBASE_CHILD_LAWYERS);
-            DatabaseReference pushRef = teamMemberRef.push();
-            pushRef.setValue(newMember);
-        } else if (team == "Judges"){
-            DatabaseReference teamMemberRef = FirebaseDatabase
-                    .getInstance()
-                    .getReference(Constants.FIREBASE_CHILD_JUDGES);
-            DatabaseReference pushRef = teamMemberRef.push();
-            pushRef.setValue(newMember);
-        }
+//        TeamMember newMember = new TeamMember(name, team);
+//        if (team == "Lawyers"){
+//            DatabaseReference teamMemberRef = FirebaseDatabase
+//                    .getInstance()
+//                    .getReference(Constants.FIREBASE_CHILD_LAWYERS);
+//            DatabaseReference pushRef = teamMemberRef.push();
+//            pushRef.setValue(newMember);
+//        } else if (team == "Judges"){
+//            DatabaseReference teamMemberRef = FirebaseDatabase
+//                    .getInstance()
+//                    .getReference(Constants.FIREBASE_CHILD_JUDGES);
+//            DatabaseReference pushRef = teamMemberRef.push();
+//            pushRef.setValue(newMember);
+//        }
 
     }
     private void createAuthStateListener() {

@@ -31,7 +31,7 @@ public class LoginActivity extends AppCompatActivity implements View.OnClickList
 
     private FirebaseAuth mAuth;
     private FirebaseAuth.AuthStateListener mAuthListener;
-    private ProgressDialog mAuthProgressDialog;
+//    private ProgressDialog mAuthProgressDialog;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -70,7 +70,7 @@ public class LoginActivity extends AppCompatActivity implements View.OnClickList
     private void loginWithPassword(){
         String email = mEmailEditText.getText().toString().trim();
         String password = mPasswordEditText.getText().toString().trim();
-        if (mEmail.equals("")){
+        if (email.equals("")){
             mEmailEditText.requestFocus();
             mEmailEditText.setError("Please enter your email");
             return;
@@ -80,18 +80,31 @@ public class LoginActivity extends AppCompatActivity implements View.OnClickList
             mPasswordEditText.setError("Password is required");
             return;
         }
-        mAuthProgressDialog.show();
+//        mAuthProgressDialog.show();
 
-        mAuth.signInWithEmailAndPassword(mEmail, password)
+        mAuth.signInWithEmailAndPassword(email, password)
                 .addOnCompleteListener(this, new OnCompleteListener<AuthResult>() {
                     @Override
                     public void onComplete(@NonNull Task<AuthResult> task) {
-                        mAuthProgressDialog.dismiss();
+//                        mAuthProgressDialog.dismiss();
                         if (!task.isSuccessful()) {
                             Toast.makeText(LoginActivity.this, "Login failed - try again!", Toast.LENGTH_SHORT).show();
                         }
                     }
                 });
 
+    }
+    @Override
+    public void onStart() {
+        super.onStart();
+        mAuth.addAuthStateListener(mAuthListener);
+    }
+
+    @Override
+    public void onStop() {
+        super.onStop();
+        if (mAuthListener != null) {
+            mAuth.removeAuthStateListener(mAuthListener);
+        }
     }
 }
