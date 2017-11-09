@@ -15,6 +15,8 @@ import com.epicodus.wellnesschallenge.adapters.ExerciseListAdapter;
 import com.epicodus.wellnesschallenge.adapters.FirebaseExerciseViewHolder;
 import com.epicodus.wellnesschallenge.models.Exercise;
 import com.firebase.ui.database.FirebaseRecyclerAdapter;
+import com.google.firebase.auth.FirebaseAuth;
+import com.google.firebase.auth.FirebaseUser;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 
@@ -37,11 +39,14 @@ public class UserLogActivity extends AppCompatActivity implements View.OnClickLi
         setContentView(R.layout.activity_user_log);
         ButterKnife.bind(this);
 
+        FirebaseUser user = FirebaseAuth.getInstance().getCurrentUser();
+        String uid = user.getUid();
+
         mDashButton.setOnClickListener(this);
         mInfoButton.setOnClickListener(this);
         mAddButton.setOnClickListener(this);
 
-        mExercisesReference = FirebaseDatabase.getInstance().getReference(Constants.FIREBASE_CHILD_EXERCISES);
+        mExercisesReference = FirebaseDatabase.getInstance().getReference(Constants.FIREBASE_CHILD_EXERCISES).child(uid);
         setUpFirebaseAdapter();
     }
 

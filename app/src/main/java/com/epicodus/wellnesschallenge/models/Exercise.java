@@ -7,6 +7,7 @@ public class Exercise {
     String date;
     String exerciseType;
     double miles;
+    private String pushId;
 
     public Exercise(){}
 
@@ -24,5 +25,11 @@ public class Exercise {
     }
     public double getMiles(){
         return miles;
+    }
+    public String getPushId(){
+        return pushId;
+    }
+    public void setPushId(String pushId){
+        this.pushId = pushId;
     }
 }
