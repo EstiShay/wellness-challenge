@@ -12,14 +12,18 @@ import android.widget.EditText;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import com.epicodus.wellnesschallenge.Constants;
 import com.epicodus.wellnesschallenge.MainActivity;
 import com.epicodus.wellnesschallenge.R;
+import com.epicodus.wellnesschallenge.models.TeamMember;
 import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.Task;
 import com.google.firebase.auth.AuthResult;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
 import com.google.firebase.auth.UserProfileChangeRequest;
+import com.google.firebase.database.DatabaseReference;
+import com.google.firebase.database.FirebaseDatabase;
 
 import butterknife.Bind;
 import butterknife.ButterKnife;
@@ -32,6 +36,7 @@ public class CreateAccountActivity extends AppCompatActivity implements View.OnC
     @Bind(R.id.passwordEditText) EditText mPasswordEditText;
     @Bind(R.id.confirmPasswordEditText) EditText mConfirmPasswordEditText;
     @Bind(R.id.loginTextView) TextView mLoginTextView;
+    @Bind(R.id.teamEditText) EditText mTeamEditText;
     private FirebaseAuth mAuth;
     private FirebaseAuth.AuthStateListener mAuthListener;
     private String mName;
@@ -78,6 +83,7 @@ public class CreateAccountActivity extends AppCompatActivity implements View.OnC
     private void createNewUser() {
         final String name = mNameEditText.getText().toString().trim();
         final String email = mEmailEditText.getText().toString().trim();
+        String team = mTeamEditText.getText().toString().trim();
         String password = mPasswordEditText.getText().toString().trim();
         String confirmPassword = mConfirmPasswordEditText.getText().toString().trim();
         mName = mNameEditText.getText().toString().trim();
@@ -103,6 +109,22 @@ public class CreateAccountActivity extends AppCompatActivity implements View.OnC
                         }
                     }
                 });
+
+        TeamMember newMember = new TeamMember(name, team);
+        if (team == "Lawyers"){
+            DatabaseReference teamMemberRef = FirebaseDatabase
+                    .getInstance()
+                    .getReference(Constants.FIREBASE_CHILD_LAWYERS);
+            DatabaseReference pushRef = teamMemberRef.push();
+            pushRef.setValue(newMember);
+        } else if (team == "Judges"){
+            DatabaseReference teamMemberRef = FirebaseDatabase
+                    .getInstance()
+                    .getReference(Constants.FIREBASE_CHILD_JUDGES);
+            DatabaseReference pushRef = teamMemberRef.push();
+            pushRef.setValue(newMember);
+        }
+
     }
     private void createAuthStateListener() {
         mAuthListener = new FirebaseAuth.AuthStateListener() {
