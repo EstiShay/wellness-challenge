@@ -20,16 +20,15 @@
         android:id="@+id/exerciseTypeTextView"
         android:text="Exercise Type: "
         android:layout_marginLeft="7dp"
-        android:layout_alignBottom="@+id/exerciseTypeEditText"
-        android:layout_toLeftOf="@+id/exerciseTypeEditText"
-        android:layout_toStartOf="@+id/exerciseTypeEditText"
-        android:layout_alignBaseline="@+id/exerciseTypeEditText"/>
-    <EditText
+        android:layout_alignBottom="@+id/exercisesSpinner"
+        android:layout_toLeftOf="@+id/exercisesSpinner"
+        android:layout_toStartOf="@+id/exercisesSpinner"
+        android:layout_alignBaseline="@+id/exercisesSpinner"/>
+
+    <Spinner
+        android:id="@+id/exercisesSpinner"
         android:layout_width="190dp"
         android:layout_height="wrap_content"
-        android:id="@+id/exerciseTypeEditText"
-        android:ems="15"
-        android:inputType="text"
         android:layout_below="@+id/formTitleTextView"
         android:layout_alignParentRight="true"
         android:layout_alignParentEnd="true"
