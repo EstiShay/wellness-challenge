@@ -7,8 +7,11 @@ import android.support.v4.app.DialogFragment;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.AdapterView;
+import android.widget.ArrayAdapter;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.Spinner;
 import android.widget.Toast;
 
 import com.epicodus.wellnesschallenge.Constants;
@@ -22,8 +25,9 @@ import com.google.firebase.database.FirebaseDatabase;
 import butterknife.Bind;
 import butterknife.ButterKnife;
 
-public class AddExerciseFragment extends DialogFragment implements View.OnClickListener {
-    @Bind(R.id.exerciseTypeEditText) EditText mExerciseTypeEditText;
+public class AddExerciseFragment extends DialogFragment implements View.OnClickListener,
+        AdapterView.OnItemSelectedListener {
+    @Bind(R.id.exercisesSpinner) Spinner mExercisesSpinner;
     @Bind(R.id.dateEditText) EditText mDateEditText;
     @Bind(R.id.milesEditText) EditText mMilesEditText;
     @Bind(R.id.cancelButton) Button mCancelButton;
@@ -38,14 +42,37 @@ public class AddExerciseFragment extends DialogFragment implements View.OnClickL
 
         mCancelButton.setOnClickListener(this);
         mSaveButton.setOnClickListener(this);
+
+        //Spinner element
+        Spinner spinner = (Spinner) rootView.findViewById(R.id.exercisesSpinner);
+        //Spinner click listener
+        spinner.setOnItemSelectedListener(this);
+        //Create adapter for listener
+        ArrayAdapter<CharSequence> adapter = ArrayAdapter.createFromResource(getActivity(), R.array
+                .exercises_array, android.R.layout.simple_spinner_item);
+        //Set drop down layout style
+        adapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
+        //Attach adapter to spinner
+        spinner.setAdapter(adapter);
+
         return rootView;
     }
+
+    @Override
+    public void onItemSelected(AdapterView<?> parent, View view, int pos, long id){
+        String item = parent.getItemAtPosition(pos).toString();
+    }
+    public void onNothingSelected(AdapterView<?> parent) {
+        Toast.makeText(parent.getContext(), "Please select an exercise option", Toast
+                .LENGTH_LONG).show();
+    }
+
     @Override
     public void onClick(View v){
         if (v == mSaveButton){
             FirebaseUser user = FirebaseAuth.getInstance().getCurrentUser();
             String uid = user.getUid();
-            String exerciseType = mExerciseTypeEditText.getText().toString().trim();
+            String exerciseType = mExercisesSpinner.toString().trim();
             String date = mDateEditText.getText().toString().trim();
             double miles = Double.parseDouble(mMilesEditText.getText().toString());
             Exercise mExercise = new Exercise(date, exerciseType, miles);
@@ -63,4 +90,5 @@ public class AddExerciseFragment extends DialogFragment implements View.OnClickL
             dismiss();
         }
     }
+
 }

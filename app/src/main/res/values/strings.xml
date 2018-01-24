@@ -6,4 +6,11 @@
 
     <!-- TODO: Remove or change this placeholder text -->
     <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string-array name="exercises_array">
+        <item>Select...</item>
+        <item>Bicycle</item>
+        <item>Run</item>
+        <item>Walk</item>
+    </string-array>
+
 </resources>
