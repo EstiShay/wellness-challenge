@@ -30,7 +30,6 @@ public class AddExerciseFragment extends DialogFragment implements View.OnClickL
     @Bind(R.id.exercisesSpinner) Spinner mExercisesSpinner;
     @Bind(R.id.dateEditText) EditText mDateEditText;
     @Bind(R.id.milesEditText) EditText mMilesEditText;
-    @Bind(R.id.cancelButton) Button mCancelButton;
     @Bind(R.id.saveButton) Button mSaveButton;
 
     @Override
@@ -40,7 +39,6 @@ public class AddExerciseFragment extends DialogFragment implements View.OnClickL
         getDialog().setTitle("Exercise Form Dialog");
         ButterKnife.bind(this, rootView);
 
-        mCancelButton.setOnClickListener(this);
         mSaveButton.setOnClickListener(this);
 
         //Spinner element
@@ -85,8 +83,6 @@ public class AddExerciseFragment extends DialogFragment implements View.OnClickL
             mExercise.setPushId(pushId);
             pushRef.setValue(mExercise);
             Toast.makeText(getContext(), "Saved", Toast.LENGTH_SHORT).show();
-            dismiss();
-        } else if (v == mCancelButton){
             dismiss();
         }
     }
