@@ -12,7 +12,7 @@ Workplace wellness challenges frequently pit participants against strangers in o
 Designed for a Nexus 6 running Marshmallow.
 
 ## Current Feature in Progress (Jan. 2018)
-Redesign of the form fragment.
+Exercise icon in log.
 
 ## Specifications
 #### MVP
