@@ -31,6 +31,7 @@ public class AddExerciseFragment extends DialogFragment implements View.OnClickL
     @Bind(R.id.dateEditText) EditText mDateEditText;
     @Bind(R.id.milesEditText) EditText mMilesEditText;
     @Bind(R.id.saveButton) Button mSaveButton;
+    String spinnerSelection;
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
@@ -58,7 +59,8 @@ public class AddExerciseFragment extends DialogFragment implements View.OnClickL
 
     @Override
     public void onItemSelected(AdapterView<?> parent, View view, int pos, long id){
-        String item = parent.getItemAtPosition(pos).toString();
+        spinnerSelection = parent.getItemAtPosition(pos).toString();
+
     }
     public void onNothingSelected(AdapterView<?> parent) {
         Toast.makeText(parent.getContext(), "Please select an exercise option", Toast
@@ -70,7 +72,7 @@ public class AddExerciseFragment extends DialogFragment implements View.OnClickL
         if (v == mSaveButton){
             FirebaseUser user = FirebaseAuth.getInstance().getCurrentUser();
             String uid = user.getUid();
-            String exerciseType = mExercisesSpinner.toString().trim();
+            String exerciseType = spinnerSelection;
             String date = mDateEditText.getText().toString().trim();
             double miles = Double.parseDouble(mMilesEditText.getText().toString());
             Exercise mExercise = new Exercise(date, exerciseType, miles);
