@@ -6,12 +6,15 @@ import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.ImageView;
 import android.widget.TextView;
 
 import com.epicodus.wellnesschallenge.R;
 import com.epicodus.wellnesschallenge.models.Exercise;
 
 import java.util.ArrayList;
+import java.util.HashMap;
+import java.util.Map;
 
 import butterknife.Bind;
 import butterknife.ButterKnife;
@@ -45,6 +48,7 @@ public class ExerciseListAdapter extends RecyclerView.Adapter<ExerciseListAdapte
     public class ExerciseViewHolder extends RecyclerView.ViewHolder {
         @Bind(R.id.dateTextView) TextView mDateTextView;
         @Bind(R.id.milesTextView) TextView mMilesTextView;
+        @Bind(R.id.exerciseImageView) ImageView mExerciseImageView;
         private Context mContext;
 
         public ExerciseViewHolder(View itemView) {
@@ -57,6 +61,14 @@ public class ExerciseListAdapter extends RecyclerView.Adapter<ExerciseListAdapte
             mDateTextView.setText(exercise.getDate());
             String doubleString = Double.toString(exercise.getMiles());
             mMilesTextView.setText(doubleString);
+            String foundExercise = exercise.getExerciseType();
+            if (foundExercise.equals("Bicycle")){
+                mExerciseImageView.setImageResource(R.drawable.ic_bike_black);
+            } else if (foundExercise.equals("Run")){
+                mExerciseImageView.setImageResource(R.drawable.ic_run_black);
+            } else if (foundExercise.equals("Walk")){
+                mExerciseImageView.setImageResource(R.drawable.ic_walk_black);
+            }
         }
     }
 }
